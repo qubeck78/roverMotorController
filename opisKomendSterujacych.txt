@@ -1,0 +1,103 @@
+
+****************************************************************************************************
+Komenda ustawienia kata skretu:
+
+Sxx\n - gdzie 'xx' - kat skretu od 60 do 120 stopni, '\n' - znak konca linii
+
+odpowiedz:
+
+OK\n lub
+LOWBATT\n lub
+NOPOWER\n
+
+
+gdzie:
+- OK - wszystko dobrze :-P
+- LOWBATT - nalezy doladowac baterie
+- NOPOWER - zasilanie bateryjne jest odlaczone (wylacznik z prawej strony lazika)
+
+W przypadku niskiego poziomu naladowania baterii lub braku zasilania komenda nie zostaje wykonana.
+
+
+Przyklad transmisji: '>' i '<' oznaczaja kierunek przesylu danych
+
+> S95
+
+< OK
+
+
+****************************************************************************************************
+Komenda przemieszczenia pojazdu
+
+D+/-xxxx\n - gdzie '+' oznacza kierunek do przodu, '-' do ty³u, 'xxxx' - dystans do pokonania w mm, '\n' - znak konca linii
+
+odpowiedz:
+
+OK\n lub
+LOWBATT\n lub
+NOPOWER\n
+
+Po przejechaniu zadanego dystansu sterownik wysyla komunikat
+
+STOP\n
+
+
+W przypadku niskiego poziomu naladowania baterii lub braku zasilania komenda nie zostaje wykonana.
+
+
+Przyklad transmisji: '>' i '<' oznaczaja kierunek przesylu danych
+
+>S90
+
+<OK
+
+>D+53
+
+<OK
+
+>S110
+
+<OK
+
+<STOP
+
+>D-15
+
+<OK
+<STOP
+
+****************************************************************************************************
+Komenda zatrzymania pojazdu - zatrzymuje lazik z poszanowaniem paskow i silnikow (zwalniajac)
+
+H
+
+odpowiedz: 
+STOP\n - gdy lazik byl w ruchu
+
+
+****************************************************************************************************
+Komenda awaryjnego stopu - zatrzymuje lazik bezwarunkowo
+
+!
+
+odpowiedz: 
+STOP'n - gdy lazik byl w ruchu
+
+
+
+****************************************************************************************************
+Komenda odczytu poziomu baterii
+
+B
+
+odpowiedz
+
+liczba calkowita +\n
+
+570 - max poziom naladowania baterii
+445 - min poziom naladowania baterii
+
+
+Pozdrowienia
+
+Michal Kubecki
